@@ -1,4 +1,4 @@
-Topi saya bundar
-bundar topi saya
-kalau tidak bundar
+Topi saya hexagonal
+hexagonal topi saya
+kalau tidak hexagonal
 bukan topi saya --"
