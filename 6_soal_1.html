@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<style>
+    .format{
+        margin-bottom: 5px;
+    }
+    table{
+        margin-top: 5px;
+        border: black solid;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 30px;
+    }
+    td{
+        width: 50px;
+        height: 40px;
+    }
+    td,tr{
+        border: black solid;
+    }
+</style>
+<script>
+    function execute(){
+        document.getElementById("tempat1").innerHTML=null;
+        document.getElementById("tempat3").innerHTML=null;
+        document.getElementById("tempat2").innerHTML=null;
+        document.getElementById("tempat4").innerHTML=null;
+        document.getElementById("hasil1").innerHTML=null;
+        document.getElementById("hasil2").innerHTML=null;
+        var ambil1=document.format.angka1.value;
+        var ambil2=document.format.angka2.value;
+        var cek1= isNaN(ambil1);
+        var cek2 = isNaN(ambil2);
+        if(cek1==true && cek2==true){
+            alert("angka pertama dan kedua harus angka")
+        } else if(cek1==true){
+            alert("angka pertama bukan angka")
+        }else if( cek2==true){
+            alert("angka kedua harus angka")
+        }else{
+            var angka1= parseInt(ambil1);
+        var angka2= parseInt(ambil2);
+        document.getElementById("tempat1").innerHTML=angka1;
+        document.getElementById("tempat3").innerHTML=angka1;
+        document.getElementById("tempat2").innerHTML=angka2;
+        document.getElementById("tempat4").innerHTML=angka2;
+        var hasil1= angka1+angka2;
+        var hasil2= angka1-angka2;
+        document.getElementById("hasil1").innerHTML=hasil1;
+        document.getElementById("hasil2").innerHTML=hasil2;
+        }
+        
+    }
+</script>
+<body>
+    <form action="" name="format">
+        <div class="format">Angka Pertama&nbsp;: <input type="text" size="6" name="angka1" ></div> 
+        <div class="format">Angka Kedua&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" size="6"name="angka2"></div>
+        <input type="button" value="Count" onclick="execute()">
+        <table>
+            <tr>
+                <td id="tempat1"></td>
+                <td>+</td>
+                <td id="tempat2"></td>
+                <td>=</td>
+                <td id="hasil1"></td>
+            </tr>
+            <tr>
+                <td id="tempat3"></td>
+                <td>-</td>
+                <td id="tempat4"></td>
+                <td>=</td>
+                <td id="hasil2"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

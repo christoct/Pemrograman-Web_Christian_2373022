@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<style>
+    table{
+        border: solid black;
+    }
+    tr,td{
+        border: solid black;
+    }
+    td{
+        width: 10px;
+        height: 10px;
+    }
+</style>
+<script>
+    function promptbox(){
+        var hasil =0;
+        while(true){
+            hasil = prompt("A number?");
+            var cek = isNaN(hasil);
+            if(cek==false){
+                document.write(generate(hasil))
+            break;
+        }
+    }
+    }
+    function generate(angka){
+        document.write("<table style=' border: black solid; border-collapse: separate; text-align: center; font-size: 25px; border-width: 1px;'>")
+        for (i=1;i<=angka;i++){
+            document.write("<tr>");
+                document.write("<td style='border: solid black; border-width: 1px;'>"+i+"</td>");
+                document.write("<td style='border: solid black; border-width: 1px;'> x </td>");
+                document.write("<td style='border: solid black; border-width: 1px;'>"+angka+"</td>");
+                document.write("<td style='border: solid black; border-width: 1px;'> = </td>");
+                document.write("<td style='border: solid black; border-width: 1px;'>"+(angka*i)+"</td>");
+            document.write("<tr>");
+        }
+        document.write("<table/>")
+    }
+</script>
+<body onload="promptbox()" id="body">
+</body>
+</html>

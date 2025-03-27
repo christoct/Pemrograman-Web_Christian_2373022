@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<style>
+    .keterangan{
+        color: blue;
+        text-align: right;
+        font-weight: bold;
+        width: 70px;;
+        padding-right: 2px;
+    }
+    table{
+        border-collapse: separate;
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+    }
+    tr,td{
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        height: 25px;
+    }
+    .hasil{
+        width: 220px;
+        text-align: left;
+        padding-left: 2px;
+    }
+    .tombol{
+        color: blue;
+        font-weight: bold;
+        text-align: center;
+        margin-left: 15px;
+    }
+    .container{
+        height: 30px;
+    }
+    .opsi{
+        width: 150px;
+    }
+</style>
+<script>
+    function desimal_biner(desimal){
+        var tanda ="";
+        var hasil="";
+        while(true){
+            tanda += desimal %2;
+            desimal = desimal / 2;
+            desimal= Math.floor(desimal);
+            console.log(desimal);
+            console.log (tanda);
+            if (desimal <2 ){
+                tanda += "1";
+                break;
+            }
+        }
+        var i=0;
+        for (i= tanda.length -1; i>=0;i--){
+            hasil += tanda[i];
+        }
+        return hasil;
+    }
+    function biner_desimal(biner){
+        var i =0;
+        var tanda ="";
+        var j=0;
+        var hasil=0;
+        for (i=biner.length -1;i>=0;i--){
+            tanda += biner[i];
+        }
+        for(j=0;j<=tanda.length-1;j++){
+            var bilangan = parseInt(tanda[j]);
+            var simpan = bilangan *(Math.pow(2,j));
+            hasil += simpan;
+        }
+        return hasil;
+    }
+    function konversi(){
+        var input = document.getElementById("input").value;
+        var pilihan = document.getElementById("pilihan").value;
+        var output = document.getElementById("output");
+        var hasil = 0;
+        var desimal=0;
+        var hasil2=0;
+        var biner = ""
+        if(pilihan=="opsi1"){
+            desimal = parseInt(input);
+            hasil=desimal_biner(desimal);
+            output.value= hasil;
+        }else if (pilihan =="opsi2"){
+            biner += input
+            hasil2=biner_desimal(biner);
+            output.value= hasil2;
+        }
+        }
+        function cegah_error(event){
+            var pilihan = document.getElementById("pilihan").value;
+            if (pilihan=="opsi2"){
+                input.maxlength="8";
+                var key = event.key;
+            return key === "0" || key === "1" || key === "Backspace"
+            ||key === "ArrowLeft" || key === "ArrowRight";
+            }
+        }
+        function max_digit(input){
+            var pilihan = document.getElementById("pilihan").value;
+            if(pilihan=="opsi1"){
+                if (input.value<1){
+                input.value='';
+            }
+            if(input.value>225){
+                input.value=225
+            }
+            }
+            if(pilihan=="opsi2"){
+            }
+        }
+        function reset_form(){
+            document.getElementById("input").value='';
+            document.getElementById("output").value='';
+        }
+
+</script>
+<body>
+    <form action="" name="format">
+    <table>
+        <tr>
+            <td class="keterangan">Input :</td>
+            <td class="hasil" >
+                <input type="text" id="input" onkeydown=" return cegah_error(event)" oninput="max_digit(this)" maxlength="8">
+            </td>
+        </tr>
+        <tr>
+            <td class="keterangan">Output :</td>
+            <td class="hasil" >
+                <input type="text" id="output" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"> <center>
+                <select  id="pilihan" class="opsi" onchange="reset_form()">
+                    <option value="opsi1">decimal-biner</option>
+                    <option value="opsi2">biner-decimal</option>
+                </select></center>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="container">
+                <center>
+                <input type="button" value="PROSES" class="tombol" onclick="konversi()">
+                <input type="reset" value="RESET" class="tombol">
+            </center>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

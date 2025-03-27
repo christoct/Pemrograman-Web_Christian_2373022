@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<style>
+    .container{
+        border: solid black;
+        border-width: 1px;
+        width: 290px;
+        height: 55px;
+        padding: 5px;
+    }
+    .tombol{
+        margin-top: 5px;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .gambar{
+        margin-top: 100px;
+        position: absolute;
+        left: 250px;
+    }
+    body{
+        margin-bottom: 300px;
+    }
+</style>
+<script>
+    function generate(){
+        var tinggi = parseInt(document.getElementById("angka").value) ;
+        var tabel = "<table style='width: 800px; height: 600px; border-collapse: separate; border-spacing: 2px;'>";
+        for( var i =0 ;i<tinggi;i++){
+            tabel+="<tr>";
+            var total = 2*tinggi -1;
+            for (var j=0;j<total;j++){
+                if(j>= tinggi -1-i && j <=tinggi -1+i){
+                    tabel+="<td style='background-color: orange;'></td>";
+                }else{
+                    tabel+="<td style='background-color: white;'></td>";
+                }
+            }
+            tabel+="</tr>"
+        }
+        tabel+="</table>"
+        document.getElementById("gambar").innerHTML=tabel;
+    }
+</script>
+<body>
+    <center><div class="container">Tinggi Piramida : 
+        <input type="text" id="angka">
+        <input type="button" value="process"
+        class="tombol" onclick="generate()">
+        <div class="gambar" id="gambar"> </div>
+    </div></center>
+</body>
+</html>
