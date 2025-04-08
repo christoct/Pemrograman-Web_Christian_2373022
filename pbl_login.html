@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R-VE Login Page</title>
+</head>
+<style>
+    .form{
+        height: 100%;
+        width: 49%;
+        float: right;
+    }
+    .gambarlogin{
+        height: 665px;
+        width : 50%;
+        float: left;
+        margin: 0px;
+        padding: 0px;
+    }
+    .header{
+        text-align: center;
+        color: #190f3fff;
+        font-size: 40px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .logo{
+        width: 30%;
+        height: 30%;
+        margin-top: 20px;
+    }
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    .input{
+        color: grey;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .main{
+        color: #190f3fff;
+        font-size:20px ;
+        font-weight: bold;
+        padding-left: 20px;
+    }
+    .button{
+        background-color: #190f3fff;
+        color: white;
+        font-size:15px ;
+        padding-left: 270px;
+        padding-right: 270px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-right: 20px;
+        margin-bottom: 5px;
+    }
+    .check{
+        color: black;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .forgot{
+        color: blue;
+        font-size: 16px;
+    }
+</style>
+<body>
+    <img src="login.jpg" alt="login" class="gambarlogin"> 
+    <div class="form">
+        <h1 class="header">R-VE Login Page</h1>
+        <center><img src="logo R-VE.png" class="logo"></center><br>
+        <div class="main"> Username : <br>
+        <input type="text" name="Username" size="80" value="Username" class="input"><br>
+        Password :
+        <input type="password" name="Password" size="80" value="Password" class="input"><br>
+        <span class="check"><input type="checkbox">&nbsp;Remember Login</span><br><br>
+        <form action="pbl_dashboard.html"><center><input type="submit" value="Login" class="button" > </center>
+        <span class="forgot">Forgot Password?</span></form>
+    </div>
+    </div>
+    
+</body>
+</html>

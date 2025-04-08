@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    document.write("Hello World ");
+    function display(){
+        var jawab=prompt("Nama","Halo");
+        if(jawab==true){
+            alert("mantap")
+        }else{
+            alert("bagus")
+        }
+    }
+    function tampilhasil(){
+        let hasil =0;
+        let angka1= parseInt(document.hitung.angka1.value);
+        let angka2= parseInt(document.hitung.angka2.value);
+        hasil= angka1+angka2;
+            document.hitung.hasil.value=hasil;
+            hasil_operator= operator()
+            if(hasil=="+"){
+
+            }
+        }
+        function operator(x){
+            if(x==1){
+                let hasil= document.hitung.tambah.value;
+            }
+            else if(x==2){
+                let hasil= document.hitung.kurang.value;
+            }else if(x==3){
+                let hasil= document.hitung.bagi.value;
+            }else{
+                let hasil= document.hitung.kali.value;
+            }
+            return hasil;
+        }
+        var final= "00 : 00 : 00";
+        function time(){
+            var waktu = new Date ();
+            var jam = waktu.getHours();
+            var menit = waktu.getMinutes();
+            var detik = waktu.getSeconds();
+            if(jam <10){
+                jam = "0"+jam
+            }
+            if(menit <10){
+                menit = "0"+menit
+            }
+            if(detik <10){
+                detik = "0"+detik
+            }
+            final = jam +" : "+menit+" : "+detik
+            document.getElementById('target').innerHTML=final;
+            setTimeout('time()',1000)
+        }
+
+</script>
+<script src="index.js"></script>
+<style>
+    .container{
+        display: inline-flex;
+        width: 30px;
+        flex-direction: column;
+    }
+    .tempat{
+        font-weight: 500;
+        border: solid black;
+        width: 150px ;
+        padding-left: 5px;
+    }
+</style>
+<body onload="time()">
+    <h1 class="waktu"><div id="target" class="tempat"></div></h1>
+    <script>
+        var x=2;
+        let y= "hallo";
+        const z=2;
+        x=2;
+        if(x<1){
+            x="kecil";
+        }else{
+            x="besar";
+        }
+        document.writeln(x);
+        function tambah (a,b){
+            return a+b;
+        }
+        m=tambah(1,2);
+        document.writeln(m)
+    </script>
+    <input type="button" value="click"
+    onclick="display()">
+    <br> <br>
+    <form action="" name="hitung">
+        <input type="text" size="3" name="angka1">
+    <div class="container">
+    <input type="button" value="+" name="tambah" onclick="operator(1)">
+    <input type="button" value="-" name="kurang" onclick="operator(2)">
+    <input type="button" value="/" name="bagi" onclick="operator(3)">
+    <input type="button" value="*" name="kali" onclick="operator(4)">
+    </div>
+    <input type="text" size="3" name="angka2">
+    <input type="button" value="=" onclick="tampilhasil()">
+    <input type="text" size="3" name="hasil">
+    </form>
+
+</body>
+</html>
