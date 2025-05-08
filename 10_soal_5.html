@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#cari").keyup(function(){
+            kata = $("#cari").val();
+            $(".company").css("color","black")
+            if($('.company:contains("'+kata+'")')){
+                $('.company:contains("'+kata+'")').css("color","red");
+            }
+            if($("#cari").val()===""){
+                $(".company").css("color","black")
+            }
+        })
+    })
+</script>
+<style>
+    li{
+        list-style: none;
+    }
+    .company{
+        color: black;
+    }
+</style>
+<body>
+    <input type="text" id="cari"> <br> <br>
+        <li>
+            <div class="company">Sun Microsystem</div>
+        </li>
+        <li>
+            <div class="company">Apache Software Foundation</div>
+        </li>
+        <li>
+            <div class="company">Oracle Coorporation</div>
+        </li>
+        <li>
+            <div class="company">International Business Machines</div>
+        </li>
+        <li>
+            <div class="company">Microsoft Coorporation</div>
+        </li>
+        <li>
+            <div class="company">Apple Inc</div>
+        </li>
+        <li>
+            <div class="company">Sap Ag</div>
+        </li>
+        <li>
+            <div class="company">Accenture</div>
+        </li>
+        <li>
+            <div class="company">Computer Sciences Coorporation</div>
+        </li>
+        <li>
+            <div class="company">Google</div>
+        </li>
+        <li>
+            <div class="company">Softbank</div>
+        </li>
+        <li>
+            <div class="company">Yahoo</div>
+        </li>
+
+</body>
+</html>

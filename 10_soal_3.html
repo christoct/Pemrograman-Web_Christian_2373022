@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<style>
+    button{
+        width: 130px;
+        float: left;
+    }
+    div{
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        float: left;
+        border: 2px blue solid;
+        text-align: center;
+    }
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $("div").click(function(){
+            $("div").css({background:"white"});
+            $("div").attr("id","");
+            $(this).css({background:"red"});
+            $(this).attr("id","red");
+        })
+        $("#tombol").click(function(){
+            $("div").each(function(index,element){
+                $(element).css({background:"yellow"});
+                if($(this).is("#red")){
+                    $(this).css({background:"red"});
+                    return false;
+                }
+            })
+        })
+    })
+</script>
+<body>
+    <button id="tombol">Change colors</button> <br><br>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

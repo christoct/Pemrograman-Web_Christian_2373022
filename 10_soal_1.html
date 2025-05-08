@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".item").hide();
+        $("#jquery").hover(function(){
+            $("#jquery").siblings().show();
+        },function(){
+            $("#jquery").siblings().hide();
+        });
+
+        $("#community").hover(function(){
+            $("#community").siblings().show();
+        },function(){
+            $("#community").siblings().hide();
+        });
+
+        $("#development").hover(function(){
+            $("#development").siblings().show();
+        },function(){
+            $("#development").siblings().hide();
+        });
+    })
+</script>
+<style>
+    ol,li{
+        list-style: none;
+        text-decoration: underline;
+    }
+    li{
+        float: left;
+    }
+    .item{
+        display: block;
+        position: relative;
+        left: -40px;
+    }
+    .utama{
+        text-decoration: underline;
+        width: 150px;
+        color: white;
+        background-color: rgb(255, 14, 163);
+    }
+    li {
+        border-width: 2px;
+        margin-right: 5px;
+        border-style: solid;
+        border-color:  rgb(255, 14, 163);
+    }
+</style>
+<body>
+    <ol>
+        <li><div class="utama" id="jquery">jQuery</div>
+            <ol class="item" >Download</ol>
+            <ol class="item" >Documentation</ol>
+            <ol class="item" >Blog</ol>
+        </li>
+        <li><div class="utama" id="community">Community</div>
+            <ol class="item" >Mailing List</ol>
+            <ol class="item"  >Tutorials</ol>
+            <ol class="item"  >Demos</ol>
+            <ol class="item"  >Plugins</ol>
+        </li>
+        <li><div class="utama" id="development">Development</div>
+            <ol class="item" >Source Code</ol>
+            <ol class="item" >Bug Tracking</ol>
+            <ol class="item" >Recent Changes</ol>
+        </li>
+    </ol>
+</body>
+</html>

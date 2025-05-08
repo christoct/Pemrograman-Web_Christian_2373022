@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".header").click(function(){
+            var flag =$(this).prop("checked")
+            $(".body").prop("checked",flag);
+        })
+        $(".body").click(function(){
+            panjang=$("input:checkbox.body:checked").length;
+            if(panjang<5){
+                $(".header").prop("checked",false)
+            }else{
+                $(".header").prop("checked",true)
+            }
+        })
+    })
+</script>
+<style>
+    table{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <table>
+        <td width="50" align="center">
+            <input type="checkbox" class="header"><br>
+            <hr>
+            <input type="checkbox" class="body"><br>
+            <input type="checkbox" class="body"><br>
+            <input type="checkbox" class="body"><br>
+            <input type="checkbox" class="body"><br>
+            <input type="checkbox" class="body"><br>
+        </td>
+    </table>
+</body>
+</html>

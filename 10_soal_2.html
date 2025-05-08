@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#add").click(function(){
+            $('div').css("text-decoration","none");
+            hasil = $("#isi").val();
+            $("<div>"+hasil+"</div>").appendTo("body");
+            $("#isi").val("");
+        })
+        $("#search").click(function(){
+            cari = $("#isi").val();
+            $('div').css("text-decoration","none");
+            $('div:contains("'+cari+'")').css("text-decoration","underline");
+            $("#isi").val("");
+            cari ="";
+        })
+    })
+</script>
+<body>
+    <input type="text" id="isi">
+    <button id="add">Add</button>
+    <button id="search">Search</button>
+</body>
+</html>
