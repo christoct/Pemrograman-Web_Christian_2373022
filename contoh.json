@@ -1,0 +1,33 @@
+{"hewan" : {
+    "mamalia" : {
+        "kaki" : 4, 
+        "nafas":"paru-paru", 
+        "bernbulu" : "ya", 
+        "terbang" : "tidak", 
+        "menyusuii" : "Ya", 
+        "reproduksi" : "melahirkan"},
+    
+    "amfibi" : {
+        "kaki" : "beda-beda", 
+        "nafas":"paru-paru", 
+        "bernbulu" : "tidak", 
+        "terbang" : "tidak", 
+        "menyusuii" : "tidak", 
+        "reproduksi" : "bertelur"},
+    
+    "unggas" : {
+        "kaki" : 2, 
+        "nafas":"paru-paru", 
+        "bernbulu" : "ya", 
+        "terbang" : "ya", 
+        "menyusuii" : "tidak", 
+        "reproduksi" : "bertelur"},
+
+    "ikan" : {
+        "kaki" : 0, 
+        "nafas":"insang", 
+        "bernbulu" : "tidak", 
+        "terbang" : "tidak", 
+        "menyusuii" : "tidak", 
+        "reproduksi" : "bertelur"}
+}}

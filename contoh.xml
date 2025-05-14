@@ -1,0 +1,35 @@
+<?xml-stylesheet type="text/css" href="style.css"?>
+<hewan>
+    <mamalia>
+        <kaki>4</kaki>
+        <nafas>paru-paru</nafas>
+        <berbulu>ya</berbulu>
+        <terbang>tidak</terbang>
+        <menyusui>ya</menyusui>
+        <reproduksi>melahirkan</reproduksi>
+    </mamalia>
+    <amfibi>
+        <kaki>beda-beda</kaki>
+        <nafas>paru-paru</nafas>
+        <berbulu>tiak</berbulu>
+        <terbang>tidak</terbang>
+        <menyusui>tidak</menyusui>
+        <reproduksi>bertelur</reproduksi>
+    </amfibi>
+    <unggas>
+        <kaki>2</kaki>
+        <nafas>paru-paru</nafas>
+        <berbulu>ya</berbulu>
+        <terbang>ya</terbang>
+        <menyusui>tidak</menyusui>
+        <reproduksi>bertelur</reproduksi>
+    </unggas>
+    <ikan>
+        <kaki>0</kaki>
+        <nafas>insang</nafas>
+        <berbulu>tidak</berbulu>
+        <terbang>tidak</terbang>
+        <menyusui>tidak</menyusui>
+        <reproduksi>bertelur</reproduksi>
+    </ikan>
+</hewan>

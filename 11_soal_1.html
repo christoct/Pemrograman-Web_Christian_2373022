@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#search").click(function(){
+            $(".heading").siblings().empty();
+            var pilih = $(":radio[name='nilai']:checked").val();
+            if(pilih=="all"){
+                $.getJSON("nilai.json", function(data){
+                    $.each(data.nilai ,function(){
+                        $("#nilai").append(
+                            "<tr>"+
+                                "<td class='body'> &nbsp;" + this.nrp + "</td>"+
+                                "<td class='body'> &nbsp;" + this.nama + "</td>"+
+                                "<td class='body'> &nbsp;" + this.kelas + "</td>"+
+                                "<td class='body'> &nbsp;" + this.nilaiakhir + "</td>"+
+                            "</tr>"
+                        )
+                    })
+                })
+            }else if(pilih=="kelasA"){
+                $.getJSON("nilaiA.json", function(data){
+                    $.each(data.nilai,function(){
+                        $("#nilai").append(
+                            "<tr>"+
+                                "<td class='body'> &nbsp;" + this.nrp + "</td>"+
+                                "<td class='body'> &nbsp;" + this.nama + "</td>"+
+                                "<td class='body'> &nbsp;" + this.kelas + "</td>"+
+                                "<td class='body'> &nbsp;" + this.nilaiakhir + "</td>"+
+                            "</tr>"
+                        )
+                    })
+                })
+            }else if(pilih=="kelasB"){
+                $.getJSON("nilaiB.json", function(data){
+                    $.each(data.nilai, function(){
+                        $("#nilai").append(
+                            "<tr>"+
+                                "<td class='body'> &nbsp;" + this.nrp + "</td>"+
+                                "<td class='body'> &nbsp;" + this.nama + "</td>"+
+                                "<td class='body'> &nbsp;" + this.kelas + "</td>"+
+                                "<td class='body'> &nbsp;" + this.nilaiakhir + "</td>"+
+                            "</tr>"
+                        )
+                    })
+                })
+            }
+            $(":radio[name='nilai']:checked").prop("checked",false);})
+    })
+</script>
+<style>
+    .container{
+        border: solid black 1px;
+        width: 300px;
+        padding: 10px;
+    }
+    thead{
+        color: white;
+        background-color: black;
+        font-size: 20px;
+        text-align: center;
+    }
+    td{
+        padding: 3px;
+        border: solid black 1px;
+    }
+    table{
+        border: solid black 1px;
+        border-collapse: collapse;
+    }
+    tr:nth-child(odd){
+        background-color: #CCFFAA;
+    }
+    tr:nth-child(even){
+        background-color: #FFFFCC;
+    }
+    tr:first-child{
+        color: white;
+        background-color: black;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <div id="container" class="container">
+            <input type="radio" name="nilai" id="all" value="all">
+            <label for="all">All</label> <br>
+            <input type="radio" name="nilai" id="kelasA" value="kelasA">
+            <label for="all">Kelas A</label> <br>
+            <input type="radio" name="nilai" id="kealsB" value="kelasB">
+            <label for="all">Kelas B</label><br><br>
+            <button value="Search" id="search">Search</button>
+    </div>
+    <br>
+    <table id="nilai">
+        <thead class="heading">
+            <td>NRP</td>
+            <td>NAMA</td>
+            <td>KELAS</td>
+            <td>NILAI AKHIR</td>
+        </thead>
+    </table>
+</body>
+</html>

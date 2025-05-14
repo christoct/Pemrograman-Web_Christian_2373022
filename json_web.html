@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $.getJSON("contoh.json", function(data){
+            $.each(data.hewan, function(){
+                $("#hewan").append(
+                    "<tr>"+
+                        "<td> &nbsp;"+this.kaki+"</td>"+
+                        "<td> &nbsp;"+this.nafas+"</td>"+
+                        "<td> &nbsp;"+this.bernbulu+"<?td>"+
+                        "<td> &nbsp;"+this.terbang+"<?td>"+
+                        "<td> &nbsp;"+this.menyusuii+"<?td>"+
+                        "<td> &nbsp;"+this.reproduksi+"<?td>"+
+                    "</tr>"
+                )
+            })
+        })
+    })
+</script>
+<style>
+    table{
+        border: solid black ;
+        border-collapse: collapse;
+    }
+    td{
+        border: solid black ;
+        text-align: center;
+        padding: 2px;
+    }
+    thead{
+        background-color: wheat;
+        font-weight: bolder;
+    }
+</style>
+<body>
+    <table id="hewan">
+        <thead>
+            <td>Kaki</td>
+            <td>Nafas</td>
+            <td>Berbulu</td>
+            <td>Terbang</td>
+            <td>Menyusui</td>
+            <td>Reproduksi</td>
+        </thead>
+    </table>
+</body>
+</html>

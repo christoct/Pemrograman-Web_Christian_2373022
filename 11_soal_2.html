@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373022-Christian</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        var sudahklik = false;
+        $("#look").click(function(){
+            if (sudahklik==false){
+                $("table").css("width","670px");
+            $.getJSON("11_soal_2.json", function(data){
+                $("#title").html("<div>"+"<a href ="+data.link+">"+data.title+"</a>"+
+                    "</div>").addClass("title");
+
+                $("#generator").html("<div> &copy;"+data.generator+"</div>");
+
+                $("#content").html("<div class= 'link'> <a href ="+data.items[0].link+">"+
+                    data.items[0].title+"</a> </div>");
+
+                $("#content").append("<div> By : "+data.items[0].author+" / "+
+                    "<span class= 'tanggal'>"+data.items[0].published+"</span></div> <br>");
+
+                $("#content").append(data.items[0].description+"<br><br>");
+
+                $("#content").append("<div>Universitas : <a href= "+data.items[0].universitas.m+
+                " class ='link'> Click Here </a></div>");
+
+                $("#content").append("Tag(s) : "+data.items[0].tags+"<br><br>");
+
+                $("#content").append("<div class = 'link'> <a href ="+data.items[1].link+">"+ 
+                    data.items[1].title+"</a> </div>");
+
+                $("#content").append("<div> By : "+data.items[1].author+" / "+
+                    "<span class= 'tanggal'>"+data.items[1].published+"</span></div> <br>");
+                
+                $("#content").append(data.items[1].description+"<br><br>");
+
+                $("#content").append("<div>Universitas : <a href= "+data.items[1].universitas.m+
+                    " class ='link'> Click Here </a></div>");
+
+                $("#content").append("Tag(s) : "+data.items[1].tags+"<br><br>");
+
+                sudahklik= true
+                $("#look").html("Hide").removeClass();
+        })
+            } else if(sudahklik==true){
+                $("table").css("width","400px");
+                $("#title").html("Title").removeClass();
+                $("#generator").html("Generator").removeClass();
+                $("#content").html("Content").removeClass();
+                $("#look").html("Look").removeClass();
+                sudahklik=false;
+            }
+        })
+    })
+</script>
+<style>
+    table{
+        width: 400px;
+    }
+    .title{
+        text-align: center;
+        height: 50px;
+        font-weight: bolder;
+        text-decoration: underline;
+        color: blue;
+        font-size: 20px;
+    }
+    .link{
+        text-decoration: underline;
+        color: blue;
+        font-weight: 600;
+    }
+    .tanggal{
+        font-style: italic;
+    }
+</style>
+<body>
+    <table border="1">
+        <tr>
+            <td id="title">Title</td>
+        </tr>
+        <tr>
+            <td id="content">Content</td>
+        </tr>
+        <tr>
+            <td id="generator">Generator</td>
+        </tr>
+    </table>
+    <br>
+    <button id="look">Look</button>
+</body>
+</html>
